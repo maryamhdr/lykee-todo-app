@@ -88,7 +88,9 @@ const TodoPage = () => {
     return (
         <div className="main-container">
             <Header/>
-            <button className="add-todo-btn" type="button" title="Add todo"
+            <button className="add-todo-btn"
+                    type="button"
+                    title="Add todo"
                     onClick={onToggleAddModal}>
                 Add todo
                 <span className="add-icon"></span>
