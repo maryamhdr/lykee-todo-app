@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import './todo-item.scss';
 
-const TodoItem = ({todoItem, todoEdited}) => {
+const TodoItem = ({todoItem, todoEdited, todoDeleted}) => {
     const [todo, setTodo] = useState({
         id: 0,
         title: "This is a task",
@@ -23,7 +23,7 @@ const TodoItem = ({todoItem, todoEdited}) => {
     }
 
     const deleteTodo = () => {
-
+        todoDeleted(todo.id);
     }
 
     return (
