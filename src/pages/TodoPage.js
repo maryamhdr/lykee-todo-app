@@ -55,6 +55,14 @@ const TodoPage = () => {
         setTodoList(todoList.filter(todo => todo.id !== todoId));
     }
 
+    const onToggleTodo = (todoId) => {
+        setTodoList(todoList.map((todo) => {
+            if (todo.id === todoId)
+                todo.isActive = !todo.isActive;
+            return todo;
+        }));
+    }
+
     const onToggleTab = (tab) => {
         setActiveTab(tab);
     }
@@ -94,7 +102,8 @@ const TodoPage = () => {
                         filteredTodoList.map(item => <TodoItem key={item.id}
                                                                todoItem={item}
                                                                todoEdited={onToggleEditModal}
-                                                               todoDeleted={onDeleteTodo}/>) :
+                                                               todoDeleted={onDeleteTodo}
+                                                               todoToggled={onToggleTodo}/>) :
                         <div className="empty-state">
                             No todos yet!
                         </div>
