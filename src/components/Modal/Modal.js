@@ -37,6 +37,7 @@ const Modal = ({closeModal, addMode, todo, addTodo, editTodo}) => {
                        className="input"
                        type="text"
                        autoComplete="off"
+                       autoFocus={true}
                        placeholder="Todo..."
                        required
                        value={localTodo.title}

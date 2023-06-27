@@ -44,8 +44,11 @@ const TodoPage = () => {
 
     const onEditTodo = (editedTodo) => {
         setIsAddOrEditModalOpen(false);
-        const oldObjIndex = todoList.findIndex(todo => todo.id === editedTodo.id);
-        todoList[oldObjIndex] = editedTodo;
+        setTodoList(todoList.map((todo) => {
+            if (todo.id === editedTodo.id)
+                todo.title = editedTodo.title;
+            return todo;
+        }));
     }
 
     const onDeleteTodo = (todoId) => {
