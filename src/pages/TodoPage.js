@@ -13,7 +13,7 @@ const TodoPage = () => {
     const [addMode, setAddMode] = useState(true);
     const [currentTodo, setCurrentTodo] = useState({});
     const [activeTab, setActiveTab] = useState(TAB_STATE.all);
-
+    
     useEffect(() => {
         filterTodoList();
     }, [activeTab, todoList]);
@@ -24,10 +24,10 @@ const TodoPage = () => {
         setIsAddOrEditModalOpen(true);
         setAddMode(true);
         setCurrentTodo({
-            id: todoList.length + 1,
+            id: uuid(),
             title: "",
             isActive: true
-        })
+        });
     }
 
     const onToggleEditModal = (todoId) => {
@@ -83,6 +83,12 @@ const TodoPage = () => {
                 }));
                 break;
         }
+    }
+
+    const uuid = () => {
+        return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+            (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+        );
     }
 
     return (
