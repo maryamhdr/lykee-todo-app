@@ -59,12 +59,12 @@ const TodoPage = () => {
                 break;
             case TAB_STATE.inProgress:
                 setFilteredTodoList(todoList.filter(todo => {
-                    return !todo.isActive
+                    return todo.isActive
                 }));
                 break;
             case TAB_STATE.completed:
                 setFilteredTodoList(todoList.filter(todo => {
-                    return todo.isActive
+                    return !todo.isActive
                 }));
                 break;
         }
