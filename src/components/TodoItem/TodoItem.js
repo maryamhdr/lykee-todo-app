@@ -29,7 +29,7 @@ const TodoItem = ({todoItem, todoEdited, todoDeleted, todoToggled}) => {
     return (
         <div className="item">
             <div className="item-title-wrapper">
-                {/*<img src="" alt="Todo icon" className="item-icon"/>*/}
+                <i className={`fa fa-tasks item-icon ${todo.isActive ? "in-progress-item" : "completed-item"}`}></i>
                 <div className="item-title">{todo.title}</div>
             </div>
             <div className="item-btn-wrapper">

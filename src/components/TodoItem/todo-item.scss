@@ -18,16 +18,18 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-
-  img {
-    width: 24px;
-    height: 24px;
-    margin-right: 6px;
-  }
 }
 
 .item-icon {
-  display: block
+  margin-right: 6px;
+}
+
+.completed-item {
+  color: $mainGreen;
+}
+
+.in-progress-item {
+  color: $orange;
 }
 
 .complete-icon {
